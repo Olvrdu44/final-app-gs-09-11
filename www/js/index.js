@@ -19,47 +19,38 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        this.bindEvents();
     },
-
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
     // deviceready Event Handler
     //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        console.log('Received Device Ready Event');
+        console.log('calling setup push');
+        app.setupPush();
     },
+	document.addEventListener('deviceready', function () {
+	// Enable to debug issues.
+	// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-    }
-	
-};
-
-app.initialize();
-
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-  
-  var notificationOpenedCallback = function(jsonData) {
+	var notificationOpenedCallback = function(jsonData) {
 	console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
+	};
 
-  window.plugins.OneSignal
-	.startInit("ba09ae46-6497-4b13-8b41-9c18d5131dc4")
+	window.plugins.OneSignal
+	.startInit("3fc3e3ed-3afb-4fcf-be3b-ca16a7495b4f")
 	.handleNotificationOpened(notificationOpenedCallback)
 	.endInit();
-  
-  // Call syncHashedEmail anywhere in your app if you have the user's email.
-  // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
-  // window.plugins.OneSignal.syncHashedEmail(userEmail);
-}, false);
+	
+	cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+
+	}, false);
+};
