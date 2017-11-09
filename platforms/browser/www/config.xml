@@ -2,32 +2,25 @@
 <widget id="fr.rainetcom.gestionsports" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Gestion sports</name>
     <description>
-        Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)
+        Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad )
     </description>
     <author email="contact@rainetcom.fr" href="http://www.rainetcom.fr">
         Team RainetCom
     </author>
     <content src="index.html" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
     <allow-navigation href="http://gestion-sports.com/*" />
     <allow-navigation href="*://*.gestion-sports.com/*" />
     <allow-navigation href="*" />
     <allow-navigation href="http://*/*" />
-    <allow-navigation href="https://*/*" />
-    <allow-navigation href="data:*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <allow-intent href="http://example.com/*" />
-    <allow-intent href="*://*.example.com/*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="geo:*" />
+    <allow-intent href="http://gestion-sports.com/*" />
+    <allow-intent href="*://*.gestion-sports.com/*" />
     <allow-intent href="*" />
-    <access origin="http://google.com" />
-    <access origin="https://google.com" />
-    <access origin="http://maps.google.com" />
-    <access origin="http://*.google.com" />
-    <access origin="content:///*" />
     <access origin="*" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="20" />

@@ -21,7 +21,8 @@
 	<script type="text/javascript">
 		function onDeviceReady() 
 		{
-			window.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+			var ref = window.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			ref.show();
 			
 			var notificationOpenedCallback = function(jsonData) {
 			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
@@ -34,7 +35,7 @@
 		}
 		
 		
-		document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("deviceready", onDeviceReady);
 		</script>
 </body>
 
