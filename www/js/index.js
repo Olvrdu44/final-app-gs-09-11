@@ -52,7 +52,7 @@ window.plugins.OneSignal
 .handleNotificationOpened(notificationOpenedCallback)
 .endInit();
 
-cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=yes,hardwareback=no,toolbar=no');
 
 // Call syncHashedEmail anywhere in your app if you have the user's email.
 // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
