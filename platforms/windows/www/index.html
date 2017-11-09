@@ -9,11 +9,16 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <title>Gestion sports</title>
 </head>
 
-<body onload="test12();">
-	<a style="float:left;margin-top:50px;" onclick="test12();">connexion</a>
+<body>
+    <div class="app">
+         <h1>Gestion sports</h1>
+        <div id="registration" class="blink"></div>
+		<a class="http://www.gestion-sports.com/gestion-sports/application" href="myUrl">Track Now</a>
+    </div>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
 		function onDeviceReady() 
@@ -29,9 +34,16 @@
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
 		}
-		function test12()
-		{
-			cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+		
+		if (window.device.platform.toLowerCase().indexOf('blackberry') > -1) {        
+			jQuery(document).delegate('.external', 'click', function(e) {
+				openBlackBerryBrowser(e.target.href);
+			});
+		} else {        
+			jQuery(document).delegate('.external', 'click', function(e) {
+				e.preventDefault();
+				var ref = window.open(e.target.href, '_system', 'location=yes');
+			});
 		}
 		document.addEventListener("deviceready", onDeviceReady, false);
 		</script>
