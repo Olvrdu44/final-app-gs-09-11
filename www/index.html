@@ -21,7 +21,7 @@
 	<script type="text/javascript">
 		function onDeviceReady() 
 		{
-			cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+			window.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
 			
 			var notificationOpenedCallback = function(jsonData) {
 			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
