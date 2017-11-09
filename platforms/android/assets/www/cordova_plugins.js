@@ -65,6 +65,14 @@ module.exports = [
     "clobbers": [
       "OneSignal"
     ]
+  },
+  {
+    "id": "cordova-plugin-splashscreen.SplashScreen",
+    "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+    "pluginId": "cordova-plugin-splashscreen",
+    "clobbers": [
+      "navigator.splashscreen"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -77,7 +85,8 @@ module.exports.metadata =
   "phonegap-plugin-push": "1.8.4",
   "cordova-plugin-network-information": "1.3.3",
   "cordova-plugin-inappbrowser": "1.7.1",
-  "onesignal-cordova-plugin": "2.2.2"
+  "onesignal-cordova-plugin": "2.2.2",
+  "cordova-plugin-splashscreen": "4.0.3"
 };
 // BOTTOM OF METADATA
 });
