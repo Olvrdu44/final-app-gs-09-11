@@ -39,31 +39,29 @@ var app = {
     },
 };
 
-document.addEventListener('deviceready', function () {
-// Enable to debug issues.
-// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+app.initialize();
 
-var notificationOpenedCallback = function(jsonData) {
-console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-};
+document.addEventListener("deviceready", onDeviceReady, false);
 
-window.plugins.OneSignal
-.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
-.handleNotificationOpened(notificationOpenedCallback)
-.endInit();
+function onDeviceReady() {
+   
+   	
+	
+	var notificationOpenedCallback = function(jsonData) {
+	console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+	};
 
-// cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+	window.plugins.OneSignal
+	.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+	.handleNotificationOpened(notificationOpenedCallback)
+	.endInit();
+	
 
-if (navigator.connection.type == Connection.NONE) 
-{
-	navigator.notification.alert('An internet connection is required to continue');
-} 
-else 
-{
-  window.location="http://www.gestion-sports.com/gestion-sports/application";
+	
+	// cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+
 }
 
-// Call syncHashedEmail anywhere in your app if you have the user's email.
-// This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
-// window.plugins.OneSignal.syncHashedEmail(userEmail);
-}, false);
+
+
+
