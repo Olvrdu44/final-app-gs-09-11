@@ -37,20 +37,24 @@ var app = {
         console.log('calling setup push');
         app.setupPush();
     },
-	document.addEventListener('deviceready', function () {
-	// Enable to debug issues.
-	// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-
-	var notificationOpenedCallback = function(jsonData) {
-	console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-	};
-
-	window.plugins.OneSignal
-	.startInit("3fc3e3ed-3afb-4fcf-be3b-ca16a7495b4f")
-	.handleNotificationOpened(notificationOpenedCallback)
-	.endInit();
-	
-	cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
-
-	}, false);
 };
+
+document.addEventListener('deviceready', function () {
+// Enable to debug issues.
+// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+var notificationOpenedCallback = function(jsonData) {
+console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+};
+
+window.plugins.OneSignal
+.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+.handleNotificationOpened(notificationOpenedCallback)
+.endInit();
+
+cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+
+// Call syncHashedEmail anywhere in your app if you have the user's email.
+// This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+// window.plugins.OneSignal.syncHashedEmail(userEmail);
+}, false);
