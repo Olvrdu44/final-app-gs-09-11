@@ -16,6 +16,7 @@
     "cordova-plugin-whitelist": "~1.2.1",
     "cordova-windows": "^5.0.0",
     "ios": "0.0.1",
+    "onesignal-cordova-plugin": "^2.2.2",
     "phonegap-plugin-push": "~1.8.0"
   },
   "cordova": {
@@ -28,7 +29,8 @@
       "cordova-plugin-dialogs": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-network-information": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "onesignal-cordova-plugin": {}
     },
     "platforms": [
       "ios",

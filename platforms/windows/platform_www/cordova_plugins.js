@@ -99,6 +99,22 @@ module.exports = [
         "file": "plugins/cordova-plugin-inappbrowser/src/windows/InAppBrowserProxy.js",
         "pluginId": "cordova-plugin-inappbrowser",
         "runs": true
+    },
+    {
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
+    },
+    {
+        "id": "onesignal-cordova-plugin.OneSignalPushProxy",
+        "file": "plugins/onesignal-cordova-plugin/src/windows/OneSignalPushProxy.js",
+        "pluginId": "onesignal-cordova-plugin",
+        "merges": [
+            ""
+        ]
     }
 ];
 module.exports.metadata = 
@@ -110,7 +126,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "phonegap-plugin-push": "1.8.4",
     "cordova-plugin-network-information": "1.3.3",
-    "cordova-plugin-inappbrowser": "1.7.1"
+    "cordova-plugin-inappbrowser": "1.7.1",
+    "onesignal-cordova-plugin": "2.2.2"
 };
 // BOTTOM OF METADATA
 });

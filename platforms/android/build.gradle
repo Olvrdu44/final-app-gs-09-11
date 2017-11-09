@@ -93,6 +93,7 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "phonegap-plugin-push/gestionsports-push.gradle"
+apply from: "onesignal-cordova-plugin/gestionsports-build-extras-onesignal.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -257,6 +258,7 @@ dependencies {
     compile "com.android.support:support-v13:23+"
     compile "com.google.android.gms:play-services-gcm:9.8+"
     compile "me.leolin:ShortcutBadger:1.1.4@aar"
+    compile "com.onesignal:OneSignal:3.6.3"
     // SUB-PROJECT DEPENDENCIES END
 }
 

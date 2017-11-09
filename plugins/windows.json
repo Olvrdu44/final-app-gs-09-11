@@ -28,6 +28,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "Gestion sports"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "Gestion sports"
     }
   },
   "dependent_plugins": {}

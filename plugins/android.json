@@ -28,6 +28,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     }
   },
   "dependent_plugins": {}

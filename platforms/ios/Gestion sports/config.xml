@@ -98,4 +98,7 @@
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
+    <feature name="OneSignalPush">
+        <param name="ios-package" value="OneSignalPush" />
+    </feature>
 </widget>

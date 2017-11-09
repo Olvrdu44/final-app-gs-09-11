@@ -57,6 +57,7 @@
 		AD188561F42B4271AB6CCC8F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D7C07FBFA44C0D8E9E9C4B /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8444E928B10147D19AF26ACA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85263DAB13B046879E9842D0 /* CoreTelephony.framework */; };
 		2AF54C959F854AC0849EB17F /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = EDCD580D02F044848F281680 /* CDVInAppBrowser.m */; };
+		CE725336039F40E5B1220A68 /* OneSignalPush.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8D6F488B244D1A413C653 /* OneSignalPush.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		85263DAB13B046879E9842D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; name = "CoreTelephony.framework"; path = "System/Library/Frameworks/CoreTelephony.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		EDCD580D02F044848F281680 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		197868B4982B483C99066DCA /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		CFA8D6F488B244D1A413C653 /* OneSignalPush.m */ = {isa = PBXFileReference; name = "OneSignalPush.m"; path = "onesignal-cordova-plugin/OneSignalPush.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		8016E569A4A84852BBEE34EE /* OneSignalPush.h */ = {isa = PBXFileReference; name = "OneSignalPush.h"; path = "onesignal-cordova-plugin/OneSignalPush.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +363,8 @@
 				297B26443AD146EEBD4C2714 /* CDVReachability.h */,
 				EDCD580D02F044848F281680 /* CDVInAppBrowser.m */,
 				197868B4982B483C99066DCA /* CDVInAppBrowser.h */,
+				CFA8D6F488B244D1A413C653 /* OneSignalPush.m */,
+				8016E569A4A84852BBEE34EE /* OneSignalPush.h */,
 			);
 			name = Plugins;
 			path = "Gestion sports/Plugins";
@@ -481,6 +486,7 @@
 				C546601FB6C64E12A4794BC2 /* CDVConnection.m in Sources */,
 				1A2C107D3AC24951AF3914AA /* CDVReachability.m in Sources */,
 				2AF54C959F854AC0849EB17F /* CDVInAppBrowser.m in Sources */,
+				CE725336039F40E5B1220A68 /* OneSignalPush.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
