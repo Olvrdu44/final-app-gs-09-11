@@ -37,52 +37,33 @@ var app = {
         console.log('calling setup push');
         app.setupPush();
     },
-    setupPush: function() {
-        console.log('calling push init');
-        var push = PushNotification.init({
-            "android": {
-                "senderID": "XXXXXXXX"
-            },
-            "browser": {},
-            "ios": {
-                "sound": true,
-                "vibration": true,
-                "badge": true
-            },
-            "windows": {}
-        });
-        console.log('after init');
-
-        push.on('registration', function(data) {
-            console.log('registration event: ' + data.registrationId);
-
-            var oldRegId = localStorage.getItem('registrationId');
-            if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                localStorage.setItem('registrationId', data.registrationId);
-                // Post registrationId to your app server as the value has changed
-            }
-
-            var parentElement = document.getElementById('registration');
-            var listeningElement = parentElement.querySelector('.waiting');
-            var receivedElement = parentElement.querySelector('.received');
-
-            listeningElement.setAttribute('style', 'display:none;');
-            receivedElement.setAttribute('style', 'display:block;');
-        });
-
-        push.on('error', function(e) {
-            console.log("push error = " + e.message);
-        });
-
-        push.on('notification', function(data) {
-            console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
-       });
-    }
 };
+
+document.addEventListener('deviceready', function () {
+// Enable to debug issues.
+// window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+var notificationOpenedCallback = function(jsonData) {
+console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+};
+
+window.plugins.OneSignal
+.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+.handleNotificationOpened(notificationOpenedCallback)
+.endInit();
+
+// cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no,transitionstyle=coververtical');
+
+if (navigator.connection.type == Connection.NONE) 
+{
+	navigator.notification.alert('An internet connection is required to continue');
+} 
+else 
+{
+  window.location="http://www.gestion-sports.com/gestion-sports/application";
+}
+
+// Call syncHashedEmail anywhere in your app if you have the user's email.
+// This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+// window.plugins.OneSignal.syncHashedEmail(userEmail);
+}, false);

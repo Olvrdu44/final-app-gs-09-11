@@ -25,6 +25,9 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
         "phonegap-plugin-push": {
             "SENDER_ID": "XXXXXXX",
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"

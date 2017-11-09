@@ -6,7 +6,7 @@
         <DisplayName>Gestion sports</DisplayName>
         <PublisherDisplayName>Team RainetCom</PublisherDisplayName>
         <Logo>images\StoreLogo.png</Logo>
-        <Description>Cr�ez et d�veloppez votre club (Padel - Tennis - Squash - Tennis de table - bad ...).</Description>
+        <Description>Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)</Description>
     </Properties>
     <Prerequisites>
         <OSMinVersion>6.3.1</OSMinVersion>
@@ -17,7 +17,7 @@
     </Resources>
     <Applications>
         <Application Id="fr.rainetcom.gestionsports" StartPage="www/index.html">
-            <m3:VisualElements BackgroundColor="transparent" Description="Cr�ez et d�veloppez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)." DisplayName="Gestion sports" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png" ToastCapable="true">
+            <m3:VisualElements BackgroundColor="transparent" Description="Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)" DisplayName="Gestion sports" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png" ToastCapable="true">
                 <m3:DefaultTile Square71x71Logo="images\Square71x71Logo.png" Wide310x150Logo="images\Wide310x150Logo.png">
                     <m3:ShowNameOnTiles>
                         <m3:ShowOn Tile="square150x150Logo" />

@@ -38,9 +38,12 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
+    <feature name="OneSignalPush">
+        <param name="ios-package" value="OneSignalPush" />
+    </feature>
     <name>Gestion sports</name>
     <description>
-        Cr�ez et d�veloppez votre club (Padel - Tennis - Squash - Tennis de table - bad ...).
+        Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)
     </description>
     <author email="contact@rainetcom.fr" href="http://www.rainetcom.fr">
         Team RainetCom
@@ -96,9 +99,6 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="20" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
-    <feature name="OneSignalPush">
-        <param name="ios-package" value="OneSignalPush" />
-    </feature>
 </widget>

@@ -20,9 +20,12 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
     <name>Gestion sports</name>
     <description>
-        Cr�ez et d�veloppez votre club (Padel - Tennis - Squash - Tennis de table - bad ...).
+        Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad ...)
     </description>
     <author email="contact@rainetcom.fr" href="http://www.rainetcom.fr">
         Team RainetCom
@@ -56,11 +59,8 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="20" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ee6e73" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
-    <feature name="OneSignalPush">
-        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
-    </feature>
 </widget>
