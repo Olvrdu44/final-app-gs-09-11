@@ -49,7 +49,7 @@
     </div>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
-
+		$(function() {
 
 			function onDeviceReady() 
 			{
@@ -68,14 +68,14 @@
 				
 			}
 			
-			/*	$( "#change_tag" ).click(function() {
+			$( "#change_tag" ).click(function() {
 					alert( "jquery marche" );
-					window.plugins.OneSignal.deleteTag("emailkey");
-					window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
-				});*/
+					//window.plugins.OneSignal.deleteTag("emailkey");
+					//window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+			});
 
 			document.addEventListener("deviceready", onDeviceReady, false);
-
+		});
 		</script>
 </body>
 
