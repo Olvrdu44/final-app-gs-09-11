@@ -49,33 +49,33 @@
     </div>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
-		$(function() {
+		function onDeviceReady() 
+		{
+			//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 
-			function onDeviceReady() 
-			{
-				//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			var notificationOpenedCallback = function(jsonData) {
+			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+			};
 
-				var notificationOpenedCallback = function(jsonData) {
-				console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-				};
-
-				window.plugins.OneSignal
-				.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
-				.handleNotificationOpened(notificationOpenedCallback)
-				.endInit();
-				
-				window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
-				
-			}
+			window.plugins.OneSignal
+			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+			.handleNotificationOpened(notificationOpenedCallback)
+			.endInit();
 			
+			window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
+			
+		}
+		
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+		$(function() {
 			$( "#change_tag" ).click(function() {
 					alert( "jquery marche" );
-					//window.plugins.OneSignal.deleteTag("emailkey");
-					//window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+					window.plugins.OneSignal.deleteTag("emailkey");
+					window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
 			});
-
-			document.addEventListener("deviceready", onDeviceReady, false);
 		});
+		
 		</script>
 </body>
 
