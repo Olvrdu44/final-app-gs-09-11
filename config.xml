@@ -123,5 +123,6 @@
 	<allow-intent href="*" />
 
 	<!-- Don't block any requests -->
-	<access origin="*" />
+	<access origin="http://*" />
+	<access origin="https://*" />
 </widget>
