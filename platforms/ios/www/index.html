@@ -49,7 +49,7 @@
     </div>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
-		$(function() {
+
 
 			function onDeviceReady() 
 			{
@@ -65,7 +65,7 @@
 				.endInit();
 				
 				window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
-				window.plugins.OneSignal.syncHashedEmail("John.Smith@example.com");
+				
 			}
 			
 			/*	$( "#change_tag" ).click(function() {
@@ -75,7 +75,7 @@
 				});*/
 
 			document.addEventListener("deviceready", onDeviceReady, false);
-		});
+
 		</script>
 </body>
 
