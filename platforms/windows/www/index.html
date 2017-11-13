@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<a id="change_tag" style="margin-bottom:20px;padding:20px;background:#000;color:#f60;">change tag</a>
+	<a id="change_tag" style="float:left;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">change tag</a>
     <div class="app">
          <h1>Gestion sports</h1>
         <div id="registration" class="blink"></div>
@@ -66,12 +66,13 @@
 			window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
 			window.plugins.OneSignal.syncHashedEmail("John.Smith@example.com");
 			
-			$( "#change_tag" ).click(function() {
-				alert( "jquery marche" );
-				window.plugins.OneSignal.deleteTag("emailkey");
-				window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
-			});
+			
 		}
+		$( "#change_tag" ).click(function() {
+			alert( "jquery marche" );
+			window.plugins.OneSignal.deleteTag("emailkey");
+			window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+		});
 		
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
