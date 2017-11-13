@@ -15,8 +15,9 @@
 </head>
 
 <body>
-	<a onclick="changetag();" style="float:left;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">change tag</a>
-	<a onclick="changetag2();" style="float:left;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">change tag2</a>
+	<a onclick="changetag();" style="float:left;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">Arthur</a>
+	<a onclick="changetag2();" style="float:right;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">Mouloud</a>
+	<a class="btn_club" style="float:right;margin-top:50px;margin-bottom:20px;padding:20px;background:#000;color:#f60;">charge les clubs</a>
     <div class="app">
          <h1>Gestion sports</h1>
         <div id="registration" class="blink"></div>
@@ -25,12 +26,8 @@
 
 			<input type="hidden" name="compte" value="membre"/>
 			
-			<select name="club" class="choose_club">
-				<option value="rainet">Rainetcom</option>
-			</select>
-
 			<div class="field-wrap">
-				<label>
+				<label
 					Identifiant<span class="req">*</span>
 				</label>
 				<input type="text" name="identifiant" required/>
@@ -43,7 +40,7 @@
 				<input type="password" name="pass" required />
 			</div>
 			
-			<p class="forgot"><a href="#">Mot de passe oubli� ?</a></p>
+			<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
 			
 			<button class="button button-block"/>Connexion</button>
 		</form>
@@ -63,7 +60,7 @@
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
 			
-			window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
+			window.plugins.OneSignal.sendTag("email", "olivier@rainetcom.fr");
 			
 		}
 		
@@ -71,17 +68,29 @@
 		
 
 		function changetag(){
-			alert( "jquery marche" );
-			window.plugins.OneSignal.deleteTag("emailkey");
-			window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+			alert( "arthur" );
+			window.plugins.OneSignal.sendTag("email", "arthur@rainetcom.fr");
 		}
 		
 		function changetag2(){
-			alert( "jquery marche" );
-			window.plugins.OneSignal.sendTag("emailkey2", "mouloud@rainetcom.fr");
+			alert( "mouloud" );
+			window.plugins.OneSignal.sendTag("email", "mouloud@rainetcom.fr");
 		}
 		
 		
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				$.ajax({
+				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
+				   type : 'GET', // Le type de la requête HTTP, ici devenu POST
+				   dataType : 'html',
+				   success: function (html) 
+					{
+						$("#charge_les_clubs").html(html);
+					}
+				});
+			});
 		</script>
 </body>
 
