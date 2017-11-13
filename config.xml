@@ -108,32 +108,17 @@
     <plugin name="onesignal-cordova-plugin" spec="^2.2.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
 	<!-- Allow links to example.com -->
-	<allow-navigation href="http://*" />
+
 
 	<!-- Wildcards are allowed for the protocol, as a prefix
 		 to the host, or as a suffix to the path -->
-	<allow-navigation href="*://*" />
+
 
 	<!-- A wildcard can be used to whitelist the entire network,
 		 over HTTP and HTTPS.
 		 *NOT RECOMMENDED* -->
 	<allow-navigation href="*" />
 
-	<!-- The above is equivalent to these three declarations -->
-	<allow-navigation href="http://*/*" />
-	<!-- Allow links to web pages to open in a browser -->
-	<allow-intent href="http://*/*" />
-	<allow-intent href="https://*/*" />
-
-	<!-- Allow links to example.com to open in a browser -->
-	<allow-intent href="http://*" />
-
-	<!-- Wildcards are allowed for the protocol, as a prefix
-		 to the host, or as a suffix to the path -->
-	<allow-intent href="*://*" />
-
-
-	<!-- Allow all unrecognized URLs to open installed apps
 		 *NOT RECOMMENDED* -->
 	<allow-intent href="*" />
 
