@@ -23,17 +23,7 @@
 			<input type="hidden" name="compte" value="membre"/>
 			
 			<select name="club" class="choose_club">
-				<?Php
-				$reponse = $bdd->prepare("SELECT URL, NOM FROM OGS__club WHERE MOD_APPLI = ?");
-				$reponse->execute(array('1'));
-				while ($donnees = $reponse->fetch())
-				{
-					?>
-					<option value="<?php echo $donnees['URL']; ?>"><?php echo $donnees['NOM']; ?></option>
-					<?Php
-				}
-				$reponse->closeCursor();
-				?>
+				<option value="rainet">Rainetcom</option>
 			</select>
 
 			<div class="field-wrap">
