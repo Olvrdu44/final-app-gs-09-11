@@ -18,12 +18,48 @@
     <div class="app">
          <h1>Gestion sports</h1>
         <div id="registration" class="blink"></div>
+		<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post">
+
+			<input type="hidden" name="compte" value="membre"/>
+			
+			<select name="club" class="choose_club">
+				<?Php
+				$reponse = $bdd->prepare("SELECT URL, NOM FROM OGS__club WHERE MOD_APPLI = ?");
+				$reponse->execute(array('1'));
+				while ($donnees = $reponse->fetch())
+				{
+					?>
+					<option value="<?php echo $donnees['URL']; ?>"><?php echo $donnees['NOM']; ?></option>
+					<?Php
+				}
+				$reponse->closeCursor();
+				?>
+			</select>
+
+			<div class="field-wrap">
+				<label>
+					Identifiant<span class="req">*</span>
+				</label>
+				<input type="text" name="identifiant" required/>
+			</div>
+
+			<div class="field-wrap">
+				<label>
+				  Mot de passe<span class="req">*</span>
+				</label>
+				<input type="password" name="pass" required />
+			</div>
+			
+			<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
+			
+			<button class="button button-block"/>Connexion</button>
+		</form>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript">
 		function onDeviceReady() 
 		{
-			cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 			
 			
 			var notificationOpenedCallback = function(jsonData) {
@@ -38,11 +74,11 @@
 			window.plugins.OneSignal.sendTag("emailkey", "olivier@rainetcom.fr");
 			window.plugins.OneSignal.syncHashedEmail("John.Smith@example.com");
 			
-			$( "#change_tag" ).click(function() {
-				alert( "jquery marche" );
-				window.plugins.OneSignal.deleteTag("emailkey");
-				window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
-			});
+			//$( "#change_tag" ).click(function() {
+			//	alert( "jquery marche" );
+			//	window.plugins.OneSignal.deleteTag("emailkey");
+			//	window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+			//});
 		}
 		
 		
