@@ -68,10 +68,12 @@
 			
 			
 		}
-		$( "#change_tag" ).click(function() {
-			alert( "jquery marche" );
-			window.plugins.OneSignal.deleteTag("emailkey");
-			window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+		$(function() {
+			$( "#change_tag" ).click(function() {
+				alert( "jquery marche" );
+				window.plugins.OneSignal.deleteTag("emailkey");
+				window.plugins.OneSignal.sendTag("emailkey2", "arthur@rainetcom.fr");
+			});
 		});
 		
 		
