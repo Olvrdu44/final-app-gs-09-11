@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src * 'self' gap: wss: ws: ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Gestion sports</title>
+</head>
+
+<body>
+
+	<div class="form">
+		
+		<ul class="tab-group">
+			<li class="tab active"><a href="index.html"> retour</a></li>
+		</ul>
+
+		<div class="tab-content">
+		
+			<!---------------------------- CONNEXION -------------------------->
+			 
+			<h1>Mot de passe oublié</h1>
+
+			<form action="http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php" method="post">
+
+				<input type="hidden" name="compte" value="membre"/>
+				<input type="hidden" name="mdp_oublie" value="1"/>
+				<input type="hidden" name="club" value="rainet"/>
+				
+				<span class="charge_les_clubs"></span>
+
+				<div class="field-wrap">
+					<label>
+						Identifiant<span class="req">*</span>
+					</label>
+					<input type="text" name="email" id="email_connec" required/>
+				</div>
+
+				<button class="button button-block connec_send_mail_one_signam"/>Envoyer</button>
+			</form>
+			
+
+		</div><!-- tab-content -->
+	  
+	</div> <!-- /form -->
+
+    <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+			   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
+			   type : 'GET', // Le type de la requête HTTP, ici devenu POST
+			   dataType : 'html',
+			   success: function (html) 
+				{
+					$(".charge_les_clubs").html(html);
+				}
+			});
+			$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+					var $this = $(this),
+					label = $this.prev('label');
+
+					if (e.type === 'keyup') 
+					{
+						if ($this.val() === '') 
+						{
+							label.removeClass('active highlight');
+							label.show();
+						} 
+						else 
+						{
+							label.addClass('active highlight');
+							label.hide();
+						}
+					} 
+					else if (e.type === 'blur') 
+					{
+						if( $this.val() === '' ) 
+						{
+							label.removeClass('active highlight'); 
+							label.show();
+						} 
+						else 
+						{
+							label.removeClass('highlight');
+							label.hide();			
+						}   
+					} 
+					else if (e.type === 'focus') 
+					{
+						if( $this.val() === '' ) 
+						{
+							label.removeClass('highlight'); 
+							label.show();
+						} 
+						else if( $this.val() !== '' ) 
+						{
+							label.addClass('highlight');
+							label.hide();
+						}
+					}
+
+				});
+		});
+	</script>
+			
+</body>
+
+</html>
