@@ -201,7 +201,7 @@
 						<input type="text" name="email" required/>
 					</div>
 
-					<button class="button button-block send_forgot_password"/>Envoyer</button>
+					<a class="send_forgot_password">Envoyer</a>
 					
 				</form>
 			
@@ -253,7 +253,14 @@
 					}
 				});
 				/**************** FORMULAIRE MOT DE PASSE OUBLIÉ **************/
+				$('form#password').submit(function(event) {
+					event.preventDefault();
+				});
 				$(".send_forgot_password").click(function(){
+					//alert("le clic marche");
+					//alert( "la valeur compte: "+ $("form#password input[name=compte]").val() );
+					//alert( "la valeur club: "+ $("form#password select[name=club]").val() );
+					//alert( "la valeur email: "+ $("form#password input[name=email]").val() );
 					$.ajax({
 						url : 'http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php',
 						type : 'POST', // Le type de la requête HTTP, ici devenu POST
@@ -261,7 +268,13 @@
 						dataType : 'html',
 						success: function (html) 
 						{
-							$(".charge_resultat").html(html);
+							$("#charge_resultat").html(html);
+							alert(html);
+						},
+						error: function(resultat, statut, erreur) {
+							alert(statut);
+							alert(erreur);
+							alert(resultat);
 						}
 					});
 				});
