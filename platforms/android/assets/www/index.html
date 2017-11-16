@@ -198,6 +198,7 @@
 			$(function() {
 				$( ".connec_send_mail_one_signam" ).click(function() {
 					window.plugins.OneSignal.sendTag("email", $("#email_connec").val());
+					window.plugins.OneSignal.sendTag("club", $(".choose_club").val());
 				});
 				$.ajax({
 				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
