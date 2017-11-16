@@ -62,13 +62,13 @@
 					$(".charge_les_clubs").html(html);
 				}
 			});
-			$('.send_forgot_password').click(function (e) {
+			$(".send_forgot_password").click(function(){
 				$.ajax({
-				   url : 'http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php',
-				   type : 'POST', // Le type de la requête HTTP, ici devenu POST
-				   data: data : 'compte=' + $("input[name=compte]").val() + '&mdp_oublie=1&club=' + $("select[name=club]").val() + '&email=' + $("input[name=email]").val(),
-				   dataType : 'html',
-				   success: function (html) 
+					url : 'http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php',
+					type : 'POST', // Le type de la requête HTTP, ici devenu POST
+					data: 'compte=' + $("input[name=compte]").val() + '&mdp_oublie=1&club=' + $("select[name=club]").val() + '&email=' + $("input[name=email]").val(),
+					dataType : 'html',
+					success: function (html) 
 					{
 						$(".charge_resultat").html(html);
 					}
