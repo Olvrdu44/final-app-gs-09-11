@@ -49,7 +49,7 @@
 					
 					<p class="forgot"><a href="mot-de-passe.html">Mot de passe oublié ?</a></p>
 					
-					<button class="button button-block connec_send_mail_one_signam"/>Connexion</button>
+					<button class="button button-block connec_send_mail_one_signal"/>Connexion</button>
 				</form>
 			</div>
 			
@@ -196,15 +196,10 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$( ".connec_send_mail_one_signam" ).click(function() {
-				
-					//on recupere les variables en s assurrant que tout est en minuscule
-					var email = $("#email_connec").val().toLowerCase();
-					var club = $(".choose_club").val().toLowerCase();
-					
-					//on envoie tout ca a onesignal
-					window.plugins.OneSignal.sendTag("email", email);
-					window.plugins.OneSignal.sendTag("club", club);
+				$( ".connec_send_mail_one_signal" ).click(function() {
+					//on envoie le club et l'email a onesignal
+					window.plugins.OneSignal.sendTag("email", $("#email_connec").val().toLowerCase());
+					window.plugins.OneSignal.sendTag("club", $(".choose_club").val().toLowerCase());
 				});
 				$.ajax({
 				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
