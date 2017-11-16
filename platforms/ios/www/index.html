@@ -199,8 +199,8 @@
 				$( ".connec_send_mail_one_signam" ).click(function() {
 				
 					//on recupere les variables en s assurrant que tout est en minuscule
-					var email = str.toLowerCase($("#email_connec").val());
-					var club = str.toLowerCase($(".choose_club").val());
+					var email = $("#email_connec").val().toLowerCase();
+					var club = $(".choose_club").val().toLowerCase();
 					
 					//on envoie tout ca a onesignal
 					window.plugins.OneSignal.sendTag("email", email);
