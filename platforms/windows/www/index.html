@@ -76,14 +76,14 @@
 								<label>
 									Nom<span class="req">*</span>
 								</label>
-								<input class="nom" type="text" required autocomplete="off" />
+								<input name="nom" type="text" required autocomplete="off" />
 							</div>
 
 							<div class="field-wrap">
 								<label>
 									Prénom<span class="req">*</span>
 								</label>
-								<input class="prenom" type="text" required autocomplete="off"/>
+								<input name="prenom" type="text" required autocomplete="off"/>
 							</div>
 						</div>
 						
@@ -91,28 +91,28 @@
 							<label>
 							 Téléphone 1<span class="req">*</span>
 							</label>
-							<input class="tel1" type="text" required autocomplete="off"/>
+							<input name="tel1" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Téléphone 2
 							</label>
-							<input class="tel2" type="text"  autocomplete="off"/>
+							<input name="tel2" type="text"  autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Téléphone 3
 							</label>
-							<input class="tel3" type="text" autocomplete="off"/>
+							<input name="tel3" type="text" autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Profession
 							</label>
-							<input class="profession" type="text" autocomplete="off"/>
+							<input name="profession" type="text" autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
@@ -126,7 +126,7 @@
 							<label>
 							 Adresse<span class="req">*</span>
 							</label>
-							<input class="adresse" type="text" required autocomplete="off"/>
+							<input name="adresse" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="top-row">
@@ -134,14 +134,14 @@
 								<label>
 									Code postal<span class="req">*</span>
 								</label>
-								<input class="code_postal" type="text" required autocomplete="off" />
+								<input name="code_postal" type="text" required autocomplete="off" />
 							</div>
 
 							<div class="field-wrap">
 								<label>
 									Ville<span class="req">*</span>
 								</label>
-								<input class="ville" type="text" required autocomplete="off"/>
+								<input name="ville" type="text" required autocomplete="off"/>
 							</div>
 						</div>
 						
@@ -149,21 +149,21 @@
 							<label>
 							  Email<span class="req">*</span>
 							</label>
-							<input class="email" type="email" required autocomplete="off"/>
+							<input name="email" type="email" required autocomplete="off"/>
 						</div>
 
 						<div class="field-wrap">
 							<label>
 							  Mot de passe<span class="req">*</span>
 							</label>
-							<input class="pass" type="password" required autocomplete="off"/>
+							<input name="pass" type="password" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							  Confirmer le mot de passe<span class="req">*</span>
 							</label>
-							<input class="pass_confirm" type="password" required autocomplete="off"/>
+							<input name="pass_confirm" type="password" required autocomplete="off"/>
 						</div>
 
 						<button class="button button-block send_inscription"/>S'inscrire</button>
@@ -297,14 +297,13 @@
 				});
 				$(".send_inscription").click(function(){
 					//alert("le clic marche");
-					//alert( "la valeur compte: "+ $("form#password input[name=compte]").val() );
-					//alert( "la valeur club: "+ $("form#password select[name=club]").val() );
-					//alert( "la valeur email: "+ $("form#password input[name=email]").val() );
+					//alert( "sexe: "+ $("form#inscription select[name=sexe]").val() );
+					//alert( "nom: "+ $("form#inscription input[name=nom]").val() );
+					//alert( "prenom: "+ $("form#inscription input[name=prenom]").val() );
 					$.ajax({
 						url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/inscription.php',
 						type : 'POST', // Le type de la requête HTTP, ici devenu POST
-						data: 
-							'sexe=' + $("form#inscription select[name=sexe]").val() +
+						data:'sexe=' + $("form#inscription select[name=sexe]").val() +
 							'&club=' + $("form#inscription select[name=club]").val() + 
 							'&nom=' + $("form#inscription input[name=nom]").val() + 
 							'&prenom=' + $("form#inscription input[name=prenom]").val() + 
