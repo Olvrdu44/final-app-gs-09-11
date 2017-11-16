@@ -96,30 +96,30 @@
 						
 						<div class="field-wrap">
 							<label>
-							 Téléphone 2<span class="req">*</span>
+							 Téléphone 2
 							</label>
-							<input class="tel2" type="text" required autocomplete="off"/>
+							<input class="tel2" type="text"  autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
-							 Téléphone 3<span class="req">*</span>
+							 Téléphone 3
 							</label>
-							<input class="tel3" type="text" required autocomplete="off"/>
+							<input class="tel3" type="text" autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
-							 Profession<span class="req">*</span>
+							 Profession
 							</label>
-							<input class="profession" type="text" required autocomplete="off"/>
+							<input class="profession" type="text" autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Date de naissance<span class="req">*</span>
 							</label>
-							<input class="date_naissance" type="date" required autocomplete="off"/>
+							<input name="date_naissance" type="date" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
@@ -156,14 +156,14 @@
 							<label>
 							  Mot de passe<span class="req">*</span>
 							</label>
-							<input class="pass" type="password"required autocomplete="off"/>
+							<input class="pass" type="password" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							  Confirmer le mot de passe<span class="req">*</span>
 							</label>
-							<input class="pass_confirm" type="password"required autocomplete="off"/>
+							<input class="pass_confirm" type="password" required autocomplete="off"/>
 						</div>
 
 						<button class="button button-block send_inscription"/>S'inscrire</button>
@@ -305,20 +305,20 @@
 						type : 'POST', // Le type de la requête HTTP, ici devenu POST
 						data: 
 							'sexe=' + $("form#inscription select[name=sexe]").val() +
-							'&club=' + $("form#password select[name=club]").val() + 
-							'&nom=' + $("form#password input[name=nom]").val() + 
-							'&prenom=' + $("form#password input[name=prenom]").val() + 
-							'&tel1=' + $("form#password input[name=tel1]").val() + 
-							'&tel2=' + $("form#password input[name=tel2]").val() + 
-							'&tel3=' + $("form#password input[name=tel3]").val() + 
-							'&profession=' + $("form#password input[name=profession]").val() + 
-							'&date_naissance=' + $("form#password input[name=date_naissance]").val() + 
-							'&adresse=' + $("form#password input[name=adresse]").val() + 
-							'&code_postal=' + $("form#password input[name=code_postal]").val() + 
-							'&ville=' + $("form#password input[name=ville]").val() + 
-							'&pass=' + $("form#password input[name=pass]").val() + 
-							'&pass_confirm=' + $("form#password input[name=pass_confirm]").val() + 
-							'&email=' + $("form#password input[name=email]").val(),
+							'&club=' + $("form#inscription select[name=club]").val() + 
+							'&nom=' + $("form#inscription input[name=nom]").val() + 
+							'&prenom=' + $("form#inscription input[name=prenom]").val() + 
+							'&tel1=' + $("form#inscription input[name=tel1]").val() + 
+							'&tel2=' + $("form#inscription input[name=tel2]").val() + 
+							'&tel3=' + $("form#inscription input[name=tel3]").val() + 
+							'&profession=' + $("form#inscription input[name=profession]").val() + 
+							'&date_naissance=' + $("form#inscription input[name=date_naissance]").val() + 
+							'&adresse=' + $("form#inscription input[name=adresse]").val() + 
+							'&code_postal=' + $("form#inscription input[name=code_postal]").val() + 
+							'&ville=' + $("form#inscription input[name=ville]").val() + 
+							'&pass=' + $("form#inscription input[name=pass]").val() + 
+							'&pass_confirm=' + $("form#inscription input[name=pass_confirm]").val() + 
+							'&email=' + $("form#inscription input[name=email]").val(),
 						dataType : 'html',
 						success: function (html) 
 						{
