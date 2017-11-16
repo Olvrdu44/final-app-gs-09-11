@@ -174,10 +174,10 @@
 			
 		</div><!-- /id index -->
 		
-		<div id="mot-de-passe" style="dispay:none;">
+		<div id="mot-de-passe" style="display:none;">
 		
 			<ul class="tab-group">
-				<li class="tab active"><a href="index.html"> retour</a></li>
+				<li class="active"><a class="show_index"> retour</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -264,11 +264,15 @@
 							$(".charge_resultat").html(html);
 						}
 					});
-				});*/
+				});
 				/********************** TOGGLE ****************/
 				$(".show_pass").click(function(){
-					show('#mot-de-passe');
-					hide('#index');
+					$("#mot-de-passe").show();
+					$("#index").hide();
+				});
+				$(".show_index").click(function(){
+					$("#index").show();
+					$("#mot-de-passe").hide();
 				});
 				/********************* THEME pour label et placeholder ******************/
 				$('.form').find('input, textarea').on('keyup blur focus', function (e) 
