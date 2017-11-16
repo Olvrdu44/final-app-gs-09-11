@@ -66,7 +66,7 @@
 					
 						<span class="charge_les_clubs"></span>
 
-						<select class="choose_sexe">
+						<select name="sexe" class="choose_sexe">
 							<option>homme</option>
 							<option>Femme</option>
 						</select>
@@ -76,14 +76,14 @@
 								<label>
 									Nom<span class="req">*</span>
 								</label>
-								<input type="text" required autocomplete="off" />
+								<input class="nom" type="text" required autocomplete="off" />
 							</div>
 
 							<div class="field-wrap">
 								<label>
 									Prénom<span class="req">*</span>
 								</label>
-								<input type="text" required autocomplete="off"/>
+								<input class="prenom" type="text" required autocomplete="off"/>
 							</div>
 						</div>
 						
@@ -91,42 +91,42 @@
 							<label>
 							 Téléphone 1<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="tel1" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Téléphone 2<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="tel2" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Téléphone 3<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="tel3" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Profession<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="profession" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Date de naissance<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="date_naissance" type="date" required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							 Adresse<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="adresse" type="text" required autocomplete="off"/>
 						</div>
 						
 						<div class="top-row">
@@ -134,14 +134,14 @@
 								<label>
 									Code postal<span class="req">*</span>
 								</label>
-								<input type="text" required autocomplete="off" />
+								<input class="code_postal" type="text" required autocomplete="off" />
 							</div>
 
 							<div class="field-wrap">
 								<label>
 									Ville<span class="req">*</span>
 								</label>
-								<input type="text" required autocomplete="off"/>
+								<input class="ville" type="text" required autocomplete="off"/>
 							</div>
 						</div>
 						
@@ -149,24 +149,24 @@
 							<label>
 							  Email<span class="req">*</span>
 							</label>
-							<input type="email"required autocomplete="off"/>
+							<input class="email" type="email" required autocomplete="off"/>
 						</div>
 
 						<div class="field-wrap">
 							<label>
 							  Mot de passe<span class="req">*</span>
 							</label>
-							<input type="password"required autocomplete="off"/>
+							<input class="pass" type="password"required autocomplete="off"/>
 						</div>
 						
 						<div class="field-wrap">
 							<label>
 							  Confirmer le mot de passe<span class="req">*</span>
 							</label>
-							<input type="password"required autocomplete="off"/>
+							<input class="pass_confirm" type="password"required autocomplete="off"/>
 						</div>
 
-						<button type="submit" class="button button-block"/>S'inscrire</button>
+						<button class="button button-block send_inscription"/>S'inscrire</button>
 
 					</form>
 
@@ -248,7 +248,7 @@
 				
 				/*************** CHARGEMENT DES CLUBS *******************/
 				$.ajax({
-				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
+				   url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/clubs.php',
 				   type : 'GET', // Le type de la requête HTTP, ici devenu POST
 				   dataType : 'html',
 				   success: function (html) 
@@ -263,7 +263,7 @@
 				});
 				$(".send_forgot_password").click(function(){
 					$.ajax({
-						url : 'http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php',
+						url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/mot-de-passe.php',
 						type : 'POST', // Le type de la requête HTTP, ici devenu POST
 						data: 'compte=' + $("form#password input[name=compte]").val() + '&mdp_oublie=1&club=' + $("form#password select[name=club]").val() + '&email=' + $("form#password input[name=email]").val(),
 						dataType : 'html',
@@ -301,11 +301,23 @@
 					//alert( "la valeur club: "+ $("form#password select[name=club]").val() );
 					//alert( "la valeur email: "+ $("form#password input[name=email]").val() );
 					$.ajax({
-						url : 'http://www.gestion-sports.com/gestion-sports/application/inscription.php',
+						url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/inscription.php',
 						type : 'POST', // Le type de la requête HTTP, ici devenu POST
 						data: 
-							'compte=' + $("form#password input[name=compte]").val() +
-							'&mdp_oublie=1&club=' + $("form#password select[name=club]").val() + 
+							'sexe=' + $("form#inscription select[name=sexe]").val() +
+							'&club=' + $("form#password select[name=club]").val() + 
+							'&nom=' + $("form#password input[name=nom]").val() + 
+							'&prenom=' + $("form#password input[name=prenom]").val() + 
+							'&tel1=' + $("form#password input[name=tel1]").val() + 
+							'&tel2=' + $("form#password input[name=tel2]").val() + 
+							'&tel3=' + $("form#password input[name=tel3]").val() + 
+							'&profession=' + $("form#password input[name=profession]").val() + 
+							'&date_naissance=' + $("form#password input[name=date_naissance]").val() + 
+							'&adresse=' + $("form#password input[name=adresse]").val() + 
+							'&code_postal=' + $("form#password input[name=code_postal]").val() + 
+							'&ville=' + $("form#password input[name=ville]").val() + 
+							'&pass=' + $("form#password input[name=pass]").val() + 
+							'&pass_confirm=' + $("form#password input[name=pass_confirm]").val() + 
 							'&email=' + $("form#password input[name=email]").val(),
 						dataType : 'html',
 						success: function (html) 
@@ -313,8 +325,8 @@
 							navigator.notification.alert(
 								html,  // message
 								alertDismissed,         // callback
-								'Vérifiez votre boite mail',            // title
-								'OK'                  // buttonName
+								'Inscription',            // title
+								'Terminé'                  // buttonName
 							);
 							
 						},
