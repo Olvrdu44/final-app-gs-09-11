@@ -15,21 +15,182 @@
 <body>
 
 	<div class="form">
+	
+		<div id="index">
 		
-		<ul class="tab-group">
-			<li class="tab active"><a href="#login">Se connecter</a></li>
-			<li class="tab"><a href="#signup">S'inscrire</a></li>
-		</ul>
+			<ul class="tab-group">
+				<li class="tab active"><a href="#login">Se connecter</a></li>
+				<li class="tab"><a href="#signup">S'inscrire</a></li>
+			</ul>
 
-		<div class="tab-content">
+			<div class="tab-content">
+			
+				<!---------------------------- CONNEXION -------------------------->
+				<div id="login">   
+					<h1>Connexion</h1>
+
+					<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post">
+
+						<input type="hidden" name="compte" value="membre"/>
+						
+						<span class="charge_les_clubs"></span>
+
+						<div class="field-wrap">
+							<label>
+								Identifiant<span class="req">*</span>
+							</label>
+							<input type="text" name="identifiant" id="email_connec" required/>
+						</div>
+
+						<div class="field-wrap">
+							<label>
+							  Mot de passe<span class="req">*</span>
+							</label>
+							<input type="password" name="pass" required />
+						</div>
+						
+						<p class="forgot"><a class="show_pass">Mot de passe oublié ?</a></p>
+						
+						<button class="button button-block connec_send_mail_one_signal"/>Connexion</button>
+					</form>
+				</div>
+				
+				<!---------------------------- INSCRIPTION -------------------------->
+
+				<div id="signup">   
+					<h1>S'inscrire</h1>
+
+					<form action="/" method="post">
+					
+						<span class="charge_les_clubs"></span>
+
+						<select class="choose_club">
+							<option>homme</option>
+							<option>Femme</option>
+						</select>
+						
+						<div class="top-row">
+							<div class="field-wrap">
+								<label>
+									Nom<span class="req">*</span>
+								</label>
+								<input type="text" required autocomplete="off" />
+							</div>
+
+							<div class="field-wrap">
+								<label>
+									Prénom<span class="req">*</span>
+								</label>
+								<input type="text" required autocomplete="off"/>
+							</div>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 1<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 2<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 3<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Profession<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Date de naissance<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Adresse<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+						
+						<div class="top-row">
+							<div class="field-wrap">
+								<label>
+									Code postal<span class="req">*</span>
+								</label>
+								<input type="text" required autocomplete="off" />
+							</div>
+
+							<div class="field-wrap">
+								<label>
+									Ville<span class="req">*</span>
+								</label>
+								<input type="text" required autocomplete="off"/>
+							</div>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							  Email<span class="req">*</span>
+							</label>
+							<input type="email"required autocomplete="off"/>
+						</div>
+
+						<div class="field-wrap">
+							<label>
+							  Mot de passe<span class="req">*</span>
+							</label>
+							<input type="password"required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							  Confirmer le mot de passe<span class="req">*</span>
+							</label>
+							<input type="password"required autocomplete="off"/>
+						</div>
+
+						<button type="submit" class="button button-block"/>S'inscrire</button>
+
+					</form>
+
+				</div>
+
+			</div><!-- /tab-content -->
+			
+		</div><!-- /id index -->
 		
-			<!---------------------------- CONNEXION -------------------------->
-			<div id="login">   
-				<h1>Connexion</h1>
+		<div id="mot-de-passe" style="dispay:none;">
+		
+			<ul class="tab-group">
+				<li class="tab active"><a href="index.html"> retour</a></li>
+			</ul>
 
-				<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post">
+			<div class="tab-content">
+			
+				<!---------------------------- CONNEXION -------------------------->
+				<span id="charge_resultat"></span>
+				 
+				<h1>Mot de passe oublié</h1>
+
+				<form id="password">
 
 					<input type="hidden" name="compte" value="membre"/>
+					<input type="hidden" name="mdp_oublie" value="1"/>
 					
 					<span class="charge_les_clubs"></span>
 
@@ -37,138 +198,16 @@
 						<label>
 							Identifiant<span class="req">*</span>
 						</label>
-						<input type="text" name="identifiant" id="email_connec" required/>
+						<input type="text" name="email" required/>
 					</div>
 
-					<div class="field-wrap">
-						<label>
-						  Mot de passe<span class="req">*</span>
-						</label>
-						<input type="password" name="pass" required />
-					</div>
+					<button class="button button-block send_forgot_password"/>Envoyer</button>
 					
-					<p class="forgot"><a href="mot-de-passe.html">Mot de passe oublié ?</a></p>
-					
-					<button class="button button-block connec_send_mail_one_signal"/>Connexion</button>
 				</form>
-			</div>
 			
-			<!---------------------------- INSCRIPTION -------------------------->
-
-			<div id="signup">   
-				<h1>S'inscrire</h1>
-
-				<form action="/" method="post">
-				
-					<span class="charge_les_clubs"></span>
-
-					<select class="choose_club">
-						<option>homme</option>
-						<option>Femme</option>
-					</select>
-					
-					<div class="top-row">
-						<div class="field-wrap">
-							<label>
-								Nom<span class="req">*</span>
-							</label>
-							<input type="text" required autocomplete="off" />
-						</div>
-
-						<div class="field-wrap">
-							<label>
-								Prénom<span class="req">*</span>
-							</label>
-							<input type="text" required autocomplete="off"/>
-						</div>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Téléphone 1<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Téléphone 2<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Téléphone 3<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Profession<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Date de naissance<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						 Adresse<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-					
-					<div class="top-row">
-						<div class="field-wrap">
-							<label>
-								Code postal<span class="req">*</span>
-							</label>
-							<input type="text" required autocomplete="off" />
-						</div>
-
-						<div class="field-wrap">
-							<label>
-								Ville<span class="req">*</span>
-							</label>
-							<input type="text" required autocomplete="off"/>
-						</div>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						  Email<span class="req">*</span>
-						</label>
-						<input type="email"required autocomplete="off"/>
-					</div>
-
-					<div class="field-wrap">
-						<label>
-						  Mot de passe<span class="req">*</span>
-						</label>
-						<input type="password"required autocomplete="off"/>
-					</div>
-					
-					<div class="field-wrap">
-						<label>
-						  Confirmer le mot de passe<span class="req">*</span>
-						</label>
-						<input type="password"required autocomplete="off"/>
-					</div>
-
-					<button type="submit" class="button button-block"/>S'inscrire</button>
-
-				</form>
-
-			</div>
-
-		</div><!-- tab-content -->
+			</div><!-- tab-content -->
+		
+		</div><!-- /id mot de passe -->
 	  
 	</div> <!-- /form -->
 
@@ -196,11 +235,14 @@
 		
 		<script type="text/javascript">
 			$(function() {
-				$( ".connec_send_mail_one_signal" ).click(function() {
+				/****************** ONE SIGNAL MISE A JOUR **************/
+				$( ".connec_send_mail_one_signal" ).click(function() 
+				{
 					//on envoie le club et l'email a onesignal
 					window.plugins.OneSignal.sendTag("email", $("#email_connec").val().toLowerCase());
 					window.plugins.OneSignal.sendTag("club", $(".choose_club").val().toLowerCase());
 				});
+				/*************** CHARGEMENT DES CLUBS *******************/
 				$.ajax({
 				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
 				   type : 'GET', // Le type de la requête HTTP, ici devenu POST
@@ -210,8 +252,27 @@
 						$(".charge_les_clubs").html(html);
 					}
 				});
-				$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
+				/**************** FORMULAIRE MOT DE PASSE OUBLIÉ **************/
+				$(".send_forgot_password").click(function(){
+					$.ajax({
+						url : 'http://www.gestion-sports.com/gestion-sports/application/mot-de-passe.php',
+						type : 'POST', // Le type de la requête HTTP, ici devenu POST
+						data: 'compte=' + $("form#password input[name=compte]").val() + '&mdp_oublie=1&club=' + $("form#password select[name=club]").val() + '&email=' + $("form#password input[name=email]").val(),
+						dataType : 'html',
+						success: function (html) 
+						{
+							$(".charge_resultat").html(html);
+						}
+					});
+				});*/
+				/********************** TOGGLE ****************/
+				$(".show_pass").click(function(){
+					show('#mot-de-passe');
+					hide('#index');
+				});
+				/********************* THEME pour label et placeholder ******************/
+				$('.form').find('input, textarea').on('keyup blur focus', function (e) 
+				{
 					var $this = $(this),
 					label = $this.prev('label');
 
@@ -256,7 +317,7 @@
 					}
 
 				});
-
+				/****************THEME POUR INSCRIPTION ET CONNEXION *********************/
 				$('.tab a').on('click', function (e) {
 				  
 				  e.preventDefault();
