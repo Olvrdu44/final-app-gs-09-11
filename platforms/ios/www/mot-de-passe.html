@@ -61,6 +61,11 @@
 				{
 					$(".charge_les_clubs").html(html);
 				}
+				error: function(resultat, statut, erreur) {
+					alert(statut);
+					alert(erreur);
+					alert(resultat);
+				}
 			});
 			$(".send_forgot_password").click(function(){
 				$.ajax({
