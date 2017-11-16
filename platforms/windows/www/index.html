@@ -197,8 +197,14 @@
 		<script type="text/javascript">
 			$(function() {
 				$( ".connec_send_mail_one_signam" ).click(function() {
-					window.plugins.OneSignal.sendTag("email", $("#email_connec").val());
-					window.plugins.OneSignal.sendTag("club", $(".choose_club").val());
+				
+					//on recupere les variables en s assurrant que tout est en minuscule
+					var email = str.toLowerCase($("#email_connec").val());
+					var club = str.toLowerCase($(".choose_club").val());
+					
+					//on envoie tout ca a onesignal
+					window.plugins.OneSignal.sendTag("email", email);
+					window.plugins.OneSignal.sendTag("club", club);
 				});
 				$.ajax({
 				   url : 'http://www.gestion-sports.com/gestion-sports/application/clubs/index.php',
