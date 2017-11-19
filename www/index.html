@@ -238,6 +238,10 @@
 			function alertDismissed() {} //sert a ce que l alert fonctionne il lui faut une fonction qui existe sinon ca ne marche pas 
 			$(function() 
 			{
+				$( ".deco" ).click(function() 
+				{
+					window.hide();
+				});
 				/****************** ONE SIGNAL MISE A JOUR **************/
 				$( ".connec_send_mail_one_signal" ).click(function() 
 				{
