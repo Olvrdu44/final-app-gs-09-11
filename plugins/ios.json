@@ -31,6 +31,12 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     }
   },
   "dependent_plugins": {}

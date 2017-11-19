@@ -107,22 +107,10 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="onesignal-cordova-plugin" spec="^2.2.2" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
-	<!-- Allow links to example.com -->
-
-
-	<!-- Wildcards are allowed for the protocol, as a prefix
-		 to the host, or as a suffix to the path -->
-
-
-	<!-- A wildcard can be used to whitelist the entire network,
-		 over HTTP and HTTPS.
-		 *NOT RECOMMENDED* -->
-	<allow-navigation href="*" />
-
-		 *NOT RECOMMENDED* -->
-	<allow-intent href="*" />
-
-	<!-- Don't block any requests -->
-	<access origin="http://*" />
-	<access origin="https://*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+    <access origin="http://*" />
+    <access origin="https://*" />
+    <plugin name="cordova-plugin-camera" spec="^3.0.0" />
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
 </widget>
