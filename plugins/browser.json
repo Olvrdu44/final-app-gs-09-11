@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
@@ -17,6 +20,9 @@
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
         "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
         "cordova-plugin-statusbar": {
