@@ -238,11 +238,14 @@
 				alert('salut ' + state.to.userId);
 				console.log("Push Subscription state changed: " + JSON.stringify(state));
 			});
-			alert('1' + OneSignal.getUserId());
-			alert('2' + window.plugins.OneSignal.getUserId());
+			OneSignal.getUserId(function(userId) {
+			 alert("OneSignal User ID 1:" + userId);
+			});		
+			
 		}
-			alert('3' + OneSignal.getUserId());
-			alert('4' + window.plugins.OneSignal.getUserId());
+			OneSignal.getUserId(function(userId) {
+			 alert("OneSignal User ID 2:" + userId);
+			});	
 		alert('la ca marche 289');
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
