@@ -221,7 +221,7 @@
 		{
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 			ref.addEventListener('loadstop', function() {
-				ref.executeScript({file: "http://www.gestion-sports.com/gestion-sports/application/js/insert.js"});
+				ref.executeScript({code: "$( '#testinsertjs' ).click(function() {alert('ca marche');});"});
 			});
 
 			var notificationOpenedCallback = function(jsonData) {
