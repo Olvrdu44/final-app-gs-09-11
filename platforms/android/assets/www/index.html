@@ -227,14 +227,14 @@
 
 			});
 
-			/*var notificationOpenedCallback = function(jsonData) {
+			var notificationOpenedCallback = function(jsonData) {
 			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 			};
 
 			window.plugins.OneSignal
 			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
 			.handleNotificationOpened(notificationOpenedCallback)
-			.endInit();*/
+			.endInit();
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
