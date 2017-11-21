@@ -230,7 +230,18 @@
 			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
+			
+			window.plugins.OneSignal.addSubscriptionObserver(function (state) {
+			  if (!state.from.subscribed && state.to.subscribed) {
+				console.log("Subscribed for OneSignal push notifications!")
+				// get player ID
+				state.to.userId
+				alert(userId);
+			  }
+			  console.log("Push Subscription state changed: " + JSON.stringify(state));
+			});
 		}
+		alert('test: ' + window.plugins.OneSignal.getIds);
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
 
