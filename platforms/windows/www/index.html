@@ -14,6 +14,8 @@
 
 <body>
 
+
+
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript">
@@ -21,24 +23,20 @@
 	{					
 		function onDeviceReady() 
 		{
-			var notificationOpenedCallback = function(jsonData) {
-			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-			};
-
-			window.plugins.OneSignal
-			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
-			.handleNotificationOpened(notificationOpenedCallback)
-			.endInit();
-			
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 			//ON INSERE DU JS ICI POUR FAIRE INTERAGIR LA WEBVIEW
 			ref.addEventListener('loadstop', function() {
 				//ref.executeScript({code: "$( '#testinsertjs' ).click(function() {alert('ca marche');});"});
 				ref.executeScript({file: "http://www.gestion-sports.com/gestion-sports/application/js/insert.js"});
+				var notificationOpenedCallback = function(jsonData) {
+				console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+				};
 
+				window.plugins.OneSignal
+				.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+				.handleNotificationOpened(notificationOpenedCallback)
+				.endInit();
 			});
-
-			
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
