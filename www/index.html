@@ -229,14 +229,23 @@
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
 			
-			window.OneSignal.getUserId(function(userId) {
-			 alert("OneSignal User ID 1:" + userId);
-			});		
+			window.plugins.OneSignal.addSubscriptionObserver(function (state) {
+				console.log("Subscribed for OneSignal push notifications!");
+				// get player ID
+				state.to.userId;
+				alert('player id 1 ' + state.to.userId);
+				console.log("Push Subscription state changed: " + JSON.stringify(state));
+			});
+			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
+			  alert(' player id 2' + status.subscriptionStatus.userId);
+			});
+			
+			//window.OneSignal.getPlayerId(function(userId) {
+			// alert("OneSignal User ID 1:" + userId);
+			//});		
 			
 		}
-			//window.OneSignal.getUserId(function(userId) {
-			// alert("OneSignal User ID 2:" + userId);
-			//});	
+			
 		alert('la ca marche 289');
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
