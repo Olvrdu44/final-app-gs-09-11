@@ -14,42 +14,240 @@
 
 <body>
 
-	<span id="TEST1">EMAIL</span>
-	<span id="TEST2">CLUdB</span>
+	<div class="form">
+	
+		<center>
+			<img style="width:150px;margin-bottom:20px" src="http://www.gestion-sports.com/gestion-sports/application/img/accueil.png" alt="Gestion-sports"/>
+		</center>
+		
+		<div id="index">
+
+			<ul class="tab-group">
+				<li class="tab active"><a href="#login">Se connecter</a></li>
+				<li class="tab"><a href="#signup">S'inscrire</a></li>
+			</ul>
+
+			<div class="tab-content">
+			
+				<!---------------------------- CONNEXION -------------------------->
+				<div id="login">   
+					
+					<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post">
+
+						<input type="hidden" name="compte" value="membre"/>
+						
+						<span class="charge_les_clubs"></span>
+
+						<div class="field-wrap">
+							<label>
+								Identifiant<span class="req">*</span>
+							</label>
+							<input type="text" name="identifiant" id="email_connec" required/>
+						</div>
+
+						<div class="field-wrap">
+							<label>
+							  Mot de passe<span class="req">*</span>
+							</label>
+							<input type="password" name="pass" required />
+						</div>
+						
+						<p class="forgot"><a class="show_pass">Mot de passe oublié ?</a></p>
+						
+						<button class="button button-block connec_send_mail_one_signal"/>Connexion</button>
+					</form>
+				</div>
+				
+				<!---------------------------- INSCRIPTION -------------------------->
+
+				<div id="signup">   
+
+					<form action="/" id="inscription" method="post">
+					
+						<span class="charge_les_clubs"></span>
+
+						<select name="sexe" class="choose_sexe">
+							<option>homme</option>
+							<option>Femme</option>
+						</select>
+						
+						<div class="top-row">
+							<div class="field-wrap">
+								<label>
+									Nom<span class="req">*</span>
+								</label>
+								<input name="nom" type="text" required autocomplete="off" />
+							</div>
+
+							<div class="field-wrap">
+								<label>
+									Prénom<span class="req">*</span>
+								</label>
+								<input name="prenom" type="text" required autocomplete="off"/>
+							</div>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 1<span class="req">*</span>
+							</label>
+							<input name="tel1" type="text" required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 2
+							</label>
+							<input name="tel2" type="text"  autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Téléphone 3
+							</label>
+							<input name="tel3" type="text" autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Profession
+							</label>
+							<input name="profession" type="text" autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Date de naissance<span class="req">*</span>
+							</label>
+							<input name="date_naissance" type="date" required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							 Adresse<span class="req">*</span>
+							</label>
+							<input name="adresse" type="text" required autocomplete="off"/>
+						</div>
+						
+						<div class="top-row">
+							<div class="field-wrap">
+								<label>
+									Code postal<span class="req">*</span>
+								</label>
+								<input name="code_postal" type="text" required autocomplete="off" />
+							</div>
+
+							<div class="field-wrap">
+								<label>
+									Ville<span class="req">*</span>
+								</label>
+								<input name="ville" type="text" required autocomplete="off"/>
+							</div>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							  Email<span class="req">*</span>
+							</label>
+							<input name="email" type="email" required autocomplete="off"/>
+						</div>
+
+						<div class="field-wrap">
+							<label>
+							  Mot de passe<span class="req">*</span>
+							</label>
+							<input name="pass" type="password" required autocomplete="off"/>
+						</div>
+						
+						<div class="field-wrap">
+							<label>
+							  Confirmer le mot de passe<span class="req">*</span>
+							</label>
+							<input name="pass_confirm" type="password" required autocomplete="off"/>
+						</div>
+
+						<button class="button button-block send_inscription"/>S'inscrire</button>
+
+					</form>
+
+				</div>
+
+			</div><!-- /tab-content -->
+			
+		</div><!-- /id index -->
+		
+		<div id="mot-de-passe" style="display:none;">
+		
+			<ul class="tab-group">
+				<li class="active"><a class="show_index">Connexion / inscription</a></li>
+			</ul>
+
+			<div class="tab-content">
+			
+				<!---------------------------- MOT DE PASSE OUBLIE -------------------------->
+				 
+				<h1 class="mdp_oublie">Mot de passe oublié</h1>
+
+				<form id="password">
+
+					<input type="hidden" name="compte" value="membre"/>
+					<input type="hidden" name="mdp_oublie" value="1"/>
+					
+					<span class="charge_les_clubs"></span>
+
+					<div class="field-wrap">
+						<label>
+							Identifiant<span class="req">*</span>
+						</label>
+						<input type="text" name="email" required/>
+					</div>
+
+					<button class="send_forgot_password button button-block">Envoyer</button>
+					
+				</form>
+			
+			</div><!-- tab-content -->
+		
+		</div><!-- /id mot de passe -->
+	  
+	</div> <!-- /form -->
 
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript">
-	$(function() 
-	{					
+		
 		function onDeviceReady() 
 		{
-			//var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
-			//ON INSERE DU JS ICI POUR FAIRE INTERAGIR LA WEBVIEW
-			//ref.addEventListener('loadstop', function() {
-			//	ref.executeScript({file: "http://www.gestion-sports.com/gestion-sports/application/js/insert.js"});
-			//});
+			//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 
 			var notificationOpenedCallback = function(jsonData) {
-				console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-				alert(jsonData);
+			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 			};
 
 			window.plugins.OneSignal
 			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
+			
+			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
+			  status.permissionStatus.hasPrompted;
+			  status.permissionStatus.status;
+
+			  status.subscriptionStatus.subscribed;
+			  status.subscriptionStatus.userSubscriptionSetting;
+			  status.subscriptionStatus.userId;
+			  status.subscriptionStatus.pushToken;
+			});
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
-	});
 
-	</script>
+		</script>
 		
 		<script type="text/javascript">
 			function alertDismissed() {} //sert a ce que l alert fonctionne il lui faut une fonction qui existe sinon ca ne marche pas 
 			$(function() 
-			{					
+			{
 				/****************** ONE SIGNAL MISE A JOUR **************/
 				$( ".connec_send_mail_one_signal" ).click(function() 
 				{
