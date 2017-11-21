@@ -233,15 +233,18 @@
 			
 			window.plugins.OneSignal.addSubscriptionObserver(function (state) {
 			  if (!state.from.subscribed && state.to.subscribed) {
-				console.log("Subscribed for OneSignal push notifications!")
+				console.log("Subscribed for OneSignal push notifications!");
 				// get player ID
-				state.to.userId
-				alert(userId);
+				state.to.userId;
+				alert('salut' + state.to.userId);
+			  }
+			  else
+			  {
+				alert('ca marche pas');
 			  }
 			  console.log("Push Subscription state changed: " + JSON.stringify(state));
 			});
 		}
-		alert('test: ' + window.plugins.OneSignal.getIds);
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
 
