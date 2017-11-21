@@ -221,23 +221,15 @@
 			//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
 
 			var notificationOpenedCallback = function(jsonData) {
+			alert("Notification opened:\n" + JSON.stringify(jsonData));
 			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+			
 			};
-
+			
 			window.plugins.OneSignal
 			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
-			
-			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
-			  status.permissionStatus.hasPrompted;
-			  status.permissionStatus.status;
-
-			  status.subscriptionStatus.subscribed;
-			  status.subscriptionStatus.userSubscriptionSetting;
-			  status.subscriptionStatus.userId;
-			  status.subscriptionStatus.pushToken;
-			});
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
