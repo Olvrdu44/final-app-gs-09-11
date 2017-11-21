@@ -220,8 +220,10 @@
 		function onDeviceReady() 
 		{
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			//ON INSERE DU JS ICI POUR FAIRE INTERAGIR LA WEBVIEW
 			ref.addEventListener('loadstop', function() {
-				ref.executeScript({code: "$( '#testinsertjs' ).click(function() {alert('ca marche');});"});
+				//ref.executeScript({code: "$( '#testinsertjs' ).click(function() {alert('ca marche');});"});
+				ref.executeScript({file: "myscript.js"});
 			});
 
 			var notificationOpenedCallback = function(jsonData) {
