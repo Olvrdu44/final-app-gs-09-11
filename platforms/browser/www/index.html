@@ -12,7 +12,7 @@
     <title>Gestion sports</title>
 </head>
 
-<body">
+<body>
 
 	<div class="form">
 	
@@ -32,7 +32,7 @@
 				<!---------------------------- CONNEXION -------------------------->
 				<div id="login">   
 					
-					<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post" target="_system">
+					<form action="http://www.gestion-sports.com/gestion-sports/connexion.php" method="post" >
 
 						<input type="hidden" name="compte" value="membre"/>
 						
@@ -215,10 +215,14 @@
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript">
-		
+	$(function() 
+	{					
 		function onDeviceReady() 
 		{
-			//cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application', '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+			ref.addEventListener('loadstop', function() {
+				ref.executeScript({file: "http://www.gestion-sports.com/gestion-sports/application/js/insert.js"});
+			});
 
 			var notificationOpenedCallback = function(jsonData) {
 			console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
@@ -231,13 +235,14 @@
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
+	});
 
-		</script>
+	</script>
 		
 		<script type="text/javascript">
 			function alertDismissed() {} //sert a ce que l alert fonctionne il lui faut une fonction qui existe sinon ca ne marche pas 
 			$(function() 
-			{
+			{					
 				/****************** ONE SIGNAL MISE A JOUR **************/
 				$( ".connec_send_mail_one_signal" ).click(function() 
 				{
