@@ -43,6 +43,10 @@
                         {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CameraPreview\"><param name=\"android-package\" value=\"com.cordovaplugincamerapreview.CameraPreview\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -99,6 +103,18 @@
                         {
                             "xml": "<uses-permission android:name=\"fr.rainetcom.gestionsports.permission.RECEIVE_ADM_MESSAGE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.camera.autofocus\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+                            "count": 1
                         }
                     ],
                     "/manifest/application": [
@@ -136,6 +152,10 @@
                         },
                         {
                             "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"fr.rainetcom.gestionsports\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:name=\"com.cordovaplugincamerapreview.CameraActivity\" android:screenOrientation=\"portrait\" android:theme=\"@style/CameraPreviewTheme\" />",
                             "count": 1
                         }
                     ],
@@ -189,6 +209,9 @@
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
         "cordova-plugin-camera": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-camera-preview": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         }
     },
@@ -299,6 +322,14 @@
             "clobbers": [
                 "CameraPopoverHandle"
             ]
+        },
+        {
+            "id": "cordova-plugin-camera-preview.CameraPreview",
+            "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+            "pluginId": "cordova-plugin-camera-preview",
+            "clobbers": [
+                "CameraPreview"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -311,6 +342,7 @@
         "cordova-plugin-inappbrowser": "1.7.1",
         "onesignal-cordova-plugin": "2.2.2",
         "cordova-plugin-splashscreen": "4.0.3",
-        "cordova-plugin-camera": "3.0.0"
+        "cordova-plugin-camera": "3.0.0",
+        "cordova-plugin-camera-preview": "0.9.0"
     }
 }

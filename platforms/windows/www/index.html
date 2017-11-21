@@ -229,21 +229,11 @@
 			.handleNotificationOpened(notificationOpenedCallback)
 			.endInit();
 			
-			window.plugins.OneSignal.addSubscriptionObserver(function (state) {
-				console.log("Subscribed for OneSignal push notifications!");
-				// get player ID
-				state.to.userId;
-				alert('player id 1 ' + state.to.userId);
-				console.log("Push Subscription state changed: " + JSON.stringify(state));
-			});
+			//recuperer le player id 
 			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
-			  alert(' player id 2' + status.subscriptionStatus.userId);
+				alert(' player id' + status.subscriptionStatus.userId);
 			});
-			
-			//window.OneSignal.getPlayerId(function(userId) {
-			// alert("OneSignal User ID 1:" + userId);
-			//});		
-			
+
 		}
 			
 		alert('la ca marche 289');

@@ -105,6 +105,14 @@ module.exports = [
     "clobbers": [
       "CameraPopoverHandle"
     ]
+  },
+  {
+    "id": "cordova-plugin-camera-preview.CameraPreview",
+    "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+    "pluginId": "cordova-plugin-camera-preview",
+    "clobbers": [
+      "CameraPreview"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -119,7 +127,8 @@ module.exports.metadata =
   "cordova-plugin-inappbrowser": "1.7.1",
   "onesignal-cordova-plugin": "2.2.2",
   "cordova-plugin-splashscreen": "4.0.3",
-  "cordova-plugin-camera": "3.0.0"
+  "cordova-plugin-camera": "3.0.0",
+  "cordova-plugin-camera-preview": "0.9.0"
 };
 // BOTTOM OF METADATA
 });

@@ -30,6 +30,10 @@
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
+    <feature name="CameraPreview">
+        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Gestion sports</name>
     <description>
         Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad )

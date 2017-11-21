@@ -37,6 +37,9 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "Gestion sports"
     }
   },
   "dependent_plugins": {}
