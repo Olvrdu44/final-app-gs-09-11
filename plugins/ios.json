@@ -40,6 +40,21 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     }
   },
   "dependent_plugins": {}

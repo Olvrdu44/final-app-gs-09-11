@@ -40,6 +40,21 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "Gestion sports"
     }
   },
   "dependent_plugins": {}
