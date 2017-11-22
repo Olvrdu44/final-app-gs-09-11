@@ -2,238 +2,61 @@
 
 <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src * 'self' gap: wss: ws: ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Gestion sports</title>
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<meta http-equiv="Content-Security-Policy" content="img-src * 'self' data:; default-src * 'self' gap: wss: ws: ; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>Gestion sports</title>
+	</head>
 
-<body>
-
-    <script type="text/javascript" src="cordova.js"></script>
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript">
-		
-		function onDeviceReady() 
-		{
-			var notificationOpenedCallback = function(jsonData) {
-				console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-			};
-			
-			window.plugins.OneSignal
-			.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
-			.handleNotificationOpened(notificationOpenedCallback)
-			.endInit();
-			
-			//recuperer le player id 
-			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
-				//alert(' player id' + status.subscriptionStatus.userId);
-				var playerid = status.subscriptionStatus.userId;
-				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
-			});
-			
-			
-			
-		}
-		
-		document.addEventListener("deviceready", onDeviceReady, false);
-		
-		
-
-		</script>
-		
+	<body>
+		<center>
+			<img style="width:150px;margin-bottom:20px" src="http://www.gestion-sports.com/gestion-sports/application/img/accueil.png" alt="Gestion-sports"/>
+		</center>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript">
-			function alertDismissed() {} //sert a ce que l alert fonctionne il lui faut une fonction qui existe sinon ca ne marche pas 
+			
+			function onDeviceReady() 
+			{
+				window.plugins.OneSignal
+				.startInit("4ffef649-1456-4cde-9ce3-151f00eb81e7")
+				.handleNotificationOpened(notificationOpenedCallback)
+				.endInit();
+				
+				//recuperer le player id 
+				window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
+					//alert(' player id' + status.subscriptionStatus.userId);
+					var playerid = status.subscriptionStatus.userId;
+				});
+				
+				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+
+				var notificationOpenedCallback = function(jsonData) {
+					console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+				};
+		
+			}
+			
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
 			$(function() 
 			{
 				/****************** ONE SIGNAL MISE A JOUR **************/
-				$( ".connec_send_mail_one_signal" ).click(function() 
+				/*$( ".connec_send_mail_one_signal" ).click(function() 
 				{
 					//on envoie le club et l'email a onesignal
 					window.plugins.OneSignal.sendTag("email", $("#email_connec").val().toLowerCase());
 					window.plugins.OneSignal.sendTag("club", $(".choose_club").val().toLowerCase());
-				});
+				});*/
 				
-				/*************** CHARGEMENT DES CLUBS *******************/
-				$.ajax({
-				   url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/clubs.php',
-				   type : 'GET', // Le type de la requête HTTP, ici devenu POST
-				   dataType : 'html',
-				   success: function (html) 
-					{
-						$(".charge_les_clubs").html(html);
-					}
-				});
-				
-				/**************** FORMULAIRE MOT DE PASSE OUBLIÉ **************/
-				$('form#password').submit(function(event) {
-					event.preventDefault();//on empeche la soumission du formulaire
-				});
-				$(".send_forgot_password").click(function(){
-					$.ajax({
-						url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/mot-de-passe.php',
-						type : 'POST', // Le type de la requête HTTP, ici devenu POST
-						data: 'compte=' + $("form#password input[name=compte]").val() + '&mdp_oublie=1&club=' + $("form#password select[name=club]").val() + '&email=' + $("form#password input[name=email]").val(),
-						dataType : 'html',
-						success: function (html) 
-						{
-							navigator.notification.alert(
-								html,  // message
-								alertDismissed,         // callback
-								'Vérifiez votre boite mail',            // title
-								'OK'                  // buttonName
-							);
-							
-						},
-						error: function(resultat, statut, erreur) {
-							navigator.notification.alert(
-								'Une erreur est survenue veuillez réessayer',  // message
-								alertDismissed,         // callback
-								'Erreur',            // title
-								'OK'                  // buttonName
-							);
-						}
-					});
-					//on revient aussi sur la page de connexion
-					$("#index").show();
-					$("#mot-de-passe").hide();
-				});
-				
-				/**************** FORMULAIRE INSCRIPTION **************/
-				$('form#inscription').submit(function(event) {
-					event.preventDefault();//on empeche la soumission du formulaire
-				});
-				$(".send_inscription").click(function(){
-					//alert("le clic marche");
-					//alert( "sexe: "+ $("form#inscription select[name=sexe]").val() );
-					//alert( "nom: "+ $("form#inscription input[name=nom]").val() );
-					//alert( "prenom: "+ $("form#inscription input[name=prenom]").val() );
-					$.ajax({
-						url : 'http://www.gestion-sports.com/gestion-sports/application/ajax/inscription.php',
-						type : 'POST', // Le type de la requête HTTP, ici devenu POST
-						data:'sexe=' + $("form#inscription select[name=sexe]").val() +
-							'&club=' + $("form#inscription select[name=club]").val() + 
-							'&nom=' + $("form#inscription input[name=nom]").val() + 
-							'&prenom=' + $("form#inscription input[name=prenom]").val() + 
-							'&tel1=' + $("form#inscription input[name=tel1]").val() + 
-							'&tel2=' + $("form#inscription input[name=tel2]").val() + 
-							'&tel3=' + $("form#inscription input[name=tel3]").val() + 
-							'&profession=' + $("form#inscription input[name=profession]").val() + 
-							'&date_naissance=' + $("form#inscription input[name=date_naissance]").val() + 
-							'&adresse=' + $("form#inscription input[name=adresse]").val() + 
-							'&code_postal=' + $("form#inscription input[name=code_postal]").val() + 
-							'&ville=' + $("form#inscription input[name=ville]").val() + 
-							'&pass=' + $("form#inscription input[name=pass]").val() + 
-							'&pass_confirm=' + $("form#inscription input[name=pass_confirm]").val() + 
-							'&email=' + $("form#inscription input[name=email]").val(),
-						dataType : 'html',
-						success: function (html) 
-						{
-							navigator.notification.alert(
-								html,  // message
-								alertDismissed,         // callback
-								'Inscription',            // title
-								'Terminé'                  // buttonName
-							);
-							
-						},
-						error: function(resultat, statut, erreur) {
-							//alert(statut);
-							//alert(erreur);
-							//alert(resultat);
-							navigator.notification.alert(
-								'Une erreur est survenue veuillez réessayer',  // message
-								alertDismissed,         // callback
-								'Erreur',            // title
-								'OK'                  // buttonName
-							);
-						}
-					});
-					//on revient aussi sur la page de connexion
-					$("#index").show();
-					$("#mot-de-passe").hide();
-				});
-				
-				/********************** TOGGLE ****************/
-				$(".show_pass").click(function(){
-					$("#mot-de-passe").show();
-					$("#index").hide();
-				});
-				$(".show_index").click(function(){
-					$("#index").show();
-					$("#mot-de-passe").hide();
-				});
-				
-				/********************* THEME pour label et placeholder ******************/
-				$('.form').find('input, textarea').on('keyup blur focus', function (e) 
-				{
-					var $this = $(this),
-					label = $this.prev('label');
-
-					if (e.type === 'keyup') 
-					{
-						if ($this.val() === '') 
-						{
-							label.removeClass('active highlight');
-							label.show();
-						} 
-						else 
-						{
-							label.addClass('active highlight');
-							label.hide();
-						}
-					} 
-					else if (e.type === 'blur') 
-					{
-						if( $this.val() === '' ) 
-						{
-							label.removeClass('active highlight'); 
-							label.show();
-						} 
-						else 
-						{
-							label.removeClass('highlight');
-							label.hide();			
-						}   
-					} 
-					else if (e.type === 'focus') 
-					{
-						if( $this.val() === '' ) 
-						{
-							label.removeClass('highlight'); 
-							label.show();
-						} 
-						else if( $this.val() !== '' ) 
-						{
-							label.addClass('highlight');
-							label.hide();
-						}
-					}
-				});
-				
-				/****************THEME POUR INSCRIPTION ET CONNEXION *********************/
-				$('.tab a').on('click', function (e) {
-				  
-				  e.preventDefault();
-				  
-				  $(this).parent().addClass('active');
-				  $(this).parent().siblings().removeClass('active');
-				  
-				  target = $(this).attr('href');
-
-				  $('.tab-content > div').not(target).hide();
-				  
-				  $(target).fadeIn(600);
-				  
-				});
 			});
+
 		</script>
-		
-		
-</body>
+
+	</body>
 
 </html>
