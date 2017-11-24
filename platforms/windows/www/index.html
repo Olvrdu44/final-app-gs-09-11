@@ -38,6 +38,10 @@
 				//alert(' player id' + status.subscriptionStatus.userId);
 				var playerid = status.subscriptionStatus.userId;
 				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+				inAppBrowserRef.addEventListener('exit', loadStartCallBack(playerid));
+				function loadStartCallBack(playerid) {
+					var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes');
+				}
 			});
 			
 		}
