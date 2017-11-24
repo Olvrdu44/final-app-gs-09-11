@@ -42,6 +42,7 @@
 
 				 function Exit(){
 					  var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=', '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
+					  ref.addEventListener('exit', function(event){  Exit(); });
 				 }
 			});
 			
