@@ -10,13 +10,31 @@
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
+        "cordova-plugin-camera-preview": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
         "cordova-plugin-console": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-device": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "fr.rainetcom.gestionsports"
+        },
+        "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "fr.rainetcom.gestionsports"
         },
         "cordova-plugin-network-information": {
