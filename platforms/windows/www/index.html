@@ -37,7 +37,14 @@
 			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
 				//alert(' player id' + status.subscriptionStatus.userId);
 				var playerid = status.subscriptionStatus.userId;
-				Exit(playerid);
+				if(playerid != '')
+				{
+					Exit(playerid);
+				}
+				else
+				{
+					alert('erreur');
+				}
 			});
 			
 		}
