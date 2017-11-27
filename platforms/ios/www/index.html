@@ -37,7 +37,7 @@
 			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
 				//alert(' player id' + status.subscriptionStatus.userId);
 				var playerid = status.subscriptionStatus.userId;
-				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
+				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=ondeviceready' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
 				 ref.addEventListener('exit', function(event){  Exit(playerid); });
 
 			});
@@ -45,7 +45,7 @@
 		}
 		
 		 function Exit(playerid){
-			  var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
+			  var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=exit' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
 			  ref.addEventListener('exit', function(event){  Exit(playerid); });
 		 }
 		
