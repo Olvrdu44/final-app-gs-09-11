@@ -40,8 +40,10 @@
 				alert(' statut: ' + status.subscriptionStatus.status);
 				alert(' hasprompted: ' + status.subscriptionStatus.hasPrompted);
 				alert(' player id: ' + status.subscriptionStatus.userId);
-				//var playerid = status.subscriptionStatus.userId;
-				//Exit(playerid); 
+				var playerid = status.subscriptionStatus.userId;
+				var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid, '_blank', 'location=no,hardwareback=no,toolbar=yes, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
+				 ref.addEventListener('exit', function(event){  Exit(playerid); });
+
 			});
 			
 		}
