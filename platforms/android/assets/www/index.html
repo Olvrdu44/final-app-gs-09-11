@@ -35,7 +35,11 @@
 			
 			//recuperer le player id 
 			window.plugins.OneSignal.getPermissionSubscriptionState(function(status) {
-				//alert(' player id' + status.subscriptionStatus.userId);
+				alert(' subscribed: ' + status.subscriptionStatus.subscribed);
+				alert(' subscribed setting: ' + status.subscriptionStatus.userSubscriptionSetting);
+				alert(' statut: ' + status.subscriptionStatus.status);
+				alert(' hasprompted: ' + status.subscriptionStatus.hasPrompted);
+				alert(' player id: ' + status.subscriptionStatus.userId);
 				var playerid = status.subscriptionStatus.userId;
 				if(playerid == '' or == 'null')
 				{
