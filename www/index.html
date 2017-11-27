@@ -40,16 +40,8 @@
 				alert(' statut: ' + status.subscriptionStatus.status);
 				alert(' hasprompted: ' + status.subscriptionStatus.hasPrompted);
 				alert(' player id: ' + status.subscriptionStatus.userId);
-				var playerid = status.subscriptionStatus.userId;
-				if(playerid == '' or == 'null')
-				{
-					location.reload(true);
-					alert('succes' + playerid);
-				}
-				else
-				{
-					alert('erreur');
-				}
+				//var playerid = status.subscriptionStatus.userId;
+				//Exit(playerid); 
 			});
 			
 		}
