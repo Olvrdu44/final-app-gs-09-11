@@ -59,10 +59,6 @@
 					Exit(playerid);
 				}
 			});
-			
-			document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
-			document.addEventListener("resume", Exit(playerid), false);
-			
 		}
 		function Exit(playerid)
 		{
@@ -74,6 +70,8 @@
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
+		document.addEventListener("resume", Exit(playerid), false);
 		
 		
 		</script>
