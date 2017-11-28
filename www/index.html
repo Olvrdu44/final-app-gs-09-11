@@ -37,7 +37,9 @@
 			{
 				if (!state.from.subscribed && state.to.subscribed) 
 				{
+					
 					var playerid = state.to.userId;
+					window.plugins.OneSignal.sendTag("playerid", playerid);
 					Exit(playerid);
 					
 				}
