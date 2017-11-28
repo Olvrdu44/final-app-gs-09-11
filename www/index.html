@@ -62,8 +62,8 @@
 			});
 			
 			document.addEventListener("pause", onPause, false);
-			document.addEventListener("resume", onResume(playerid), false);
-			function onResume(playerid) 
+			document.addEventListener("resume", onResume(), false);
+			function onResume() 
 			{
 				cordova.InAppBrowser.close();
 				Exit(playerid);
