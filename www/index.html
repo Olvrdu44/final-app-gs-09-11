@@ -37,8 +37,11 @@
 			{
 				if (!state.from.subscribed && state.to.subscribed) 
 				{
+					document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
+					document.addEventListener("resume", Exit(playerid), false);
 					var playerid = state.to.userId;
 					Exit(playerid);
+					
 				}
 				console.log("Push Subscription state changed: " + JSON.stringify(state));
 			});
@@ -56,7 +59,10 @@
 				
 				if(statutnotif == true && playerid != 'null')
 				{
+					document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
+					document.addEventListener("resume", Exit(playerid), false);
 					Exit(playerid);
+					
 				}
 			});
 		}
@@ -70,9 +76,6 @@
 		}
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
-		document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
-		document.addEventListener("resume", Exit(playerid), false);
-		
 		
 		</script>
 		
