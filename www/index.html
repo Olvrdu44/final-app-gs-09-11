@@ -65,8 +65,7 @@
 
 			function onResume() 
 			{
-				ref.close();
-				Exit(playerid);
+				cordova.InAppBrowser.close();
 				alert('resume ca marche');
 			}
 		}
