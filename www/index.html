@@ -37,8 +37,6 @@
 			{
 				if (!state.from.subscribed && state.to.subscribed) 
 				{
-					document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
-					document.addEventListener("resume", Exit(playerid), false);
 					var playerid = state.to.userId;
 					Exit(playerid);
 					
@@ -59,10 +57,7 @@
 				
 				if(statutnotif == true && playerid != 'null')
 				{
-					document.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
-					document.addEventListener("resume", Exit(playerid), false);
 					Exit(playerid);
-					
 				}
 			});
 		}
@@ -70,6 +65,8 @@
 		{
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
 			ref.addEventListener('exit', function(event){  Exit(playerid); });
+			ref.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
+			ref.addEventListener("resume", function(event){  Exit(playerid); }, false);
 		}
 		function onPause() {
 			ref.close();
