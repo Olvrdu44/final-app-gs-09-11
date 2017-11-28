@@ -58,9 +58,10 @@
 				if(statutnotif == true && playerid != 'null')
 				{
 					Exit(playerid);
-					document.addEventListener("resume", onResume(playerid), false);
 				}
 			});
+			
+			document.addEventListener("resume", onResume(playerid), false);
 		}
 		function Exit(playerid)
 		{
