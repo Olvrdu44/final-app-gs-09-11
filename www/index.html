@@ -60,6 +60,16 @@
 					Exit(playerid);
 				}
 			});
+			document.addEventListener("pause", onPause, false);
+			document.addEventListener("resume", onResume, false);
+			function onPause() 
+			{
+				ref.close();
+			}
+			function onResume() 
+			{
+				alert('ca marche');
+			}
 		}
 		function Exit(playerid)
 		{
