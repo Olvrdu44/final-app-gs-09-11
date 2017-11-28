@@ -58,29 +58,21 @@
 				if(statutnotif == true && playerid != 'null')
 				{
 					Exit(playerid);
+					document.addEventListener("resume", onResume(playerid), false);
 				}
 			});
-			document.addEventListener("pause", onPause, false);
-			document.addEventListener("resume", onResume, false);
-			function onPause() 
-			{
-				ref.close();
-			}
-			function onResume() 
-			{
-				alert('ca marche');
-			}
 		}
 		function Exit(playerid)
 		{
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
-			ref.addEventListener('exit', function(event){  Exit(playerid); });
-			ref.addEventListener("pause", onPause, false);//si on met l appli en arriere plan on qui le ref
-			ref.addEventListener("resume", function(event){  Exit(playerid); }, false);
 		}
-		function onPause() {
+		function onResume(playerid) 
+		{
 			ref.close();
+			Exit(playerid);
+			alert('ok ca marche');
 		}
+		
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
 		
