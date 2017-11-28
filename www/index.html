@@ -62,17 +62,18 @@
 			});
 			
 			document.addEventListener("resume", onResume(playerid), false);
+			function onResume(playerid) 
+			{
+				ref.close();
+				Exit(playerid);
+				alert('ok ca marche');
+			}
 		}
 		function Exit(playerid)
 		{
 			var ref = cordova.InAppBrowser.open('http://www.gestion-sports.com/gestion-sports/application/index.php?playerid=' + playerid , '_blank', 'location=no,hardwareback=no,toolbar=no, disallowoverscroll=yes, suppressesIncrementalRendering=yes, zoom=no');
 		}
-		function onResume(playerid) 
-		{
-			ref.close();
-			Exit(playerid);
-			alert('ok ca marche');
-		}
+		
 		
 		
 		document.addEventListener("deviceready", onDeviceReady, false);
