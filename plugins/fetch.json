@@ -127,11 +127,11 @@
   "cordova-plugin-media-capture": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-media-capture@2.0.0"
+      "id": "cordova-plugin-media-capture@^2.0.0"
     },
     "is_top_level": true,
     "variables": {
-      "CAMERA_USAGE_DESCRIPTION": "to insert profile picture"
+      "MICROPHONE_USAGE_DESCRIPTION": "NO USE MICRO IN GESTION SPORTS"
     }
   }
 }
