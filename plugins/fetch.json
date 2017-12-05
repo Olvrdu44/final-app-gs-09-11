@@ -113,14 +113,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-media-capture": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-media-capture@2.0.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-camera": {
     "source": {
       "type": "registry",
@@ -130,6 +122,16 @@
     "variables": {
       "CAMERA_USAGE_DESCRIPTION": "to insert a profile picture",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert a profile picture"
+    }
+  },
+  "cordova-plugin-media-capture": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-media-capture@2.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "CAMERA_USAGE_DESCRIPTION": "to insert profile picture"
     }
   }
 }

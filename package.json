@@ -45,10 +45,12 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-file": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-media-capture": {},
       "cordova-plugin-camera": {
         "CAMERA_USAGE_DESCRIPTION": "to insert a profile picture",
         "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert a profile picture"
+      },
+      "cordova-plugin-media-capture": {
+        "CAMERA_USAGE_DESCRIPTION": "to insert profile picture"
       }
     },
     "platforms": [

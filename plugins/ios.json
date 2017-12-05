@@ -50,10 +50,10 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     },
-    "cordova-plugin-media-capture": {
+    "cordova-plugin-camera": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     },
-    "cordova-plugin-camera": {
+    "cordova-plugin-media-capture": {
       "PACKAGE_NAME": "fr.rainetcom.gestionsports"
     }
   },

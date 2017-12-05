@@ -45,9 +45,6 @@
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
-    <feature name="Capture">
-        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
-    </feature>
     <name>Gestion sports</name>
     <description>
         Créez et développez votre club (Padel - Tennis - Squash - Tennis de table - bad )
@@ -94,5 +91,8 @@
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Capture">
+        <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
     </feature>
 </widget>
