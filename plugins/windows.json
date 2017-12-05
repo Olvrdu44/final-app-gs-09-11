@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "Gestion sports"
     },
@@ -35,25 +32,10 @@
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "Gestion sports"
     },
-    "cordova-plugin-camera-preview": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
-    "cordova-plugin-media": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "Gestion sports"
     },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
-    "cordova-plugin-media-capture": {
       "PACKAGE_NAME": "Gestion sports"
     }
   },

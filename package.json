@@ -45,14 +45,14 @@
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-file": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-camera": {
-        "CAMERA_USAGE_DESCRIPTION": "to insert a profile picture",
-        "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert a profile picture"
-      },
       "cordova-plugin-media-capture": {
         "MICROPHONE_USAGE_DESCRIPTION": "NO USE MICRO IN GESTION SPORTS",
         "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert profile picture",
         "CAMERA_USAGE_DESCRIPTION": "to insert profile picture"
+      },
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "for profile picutre",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "for profile picture"
       }
     },
     "platforms": [
