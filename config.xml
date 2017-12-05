@@ -113,11 +113,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-camera" spec="^3.0.0">
         <variable name="CAMERA_USAGE_DESCRIPTION" value="to insert a profile picture" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="to insert a profile picture" />
-    </plugin>
-    <plugin name="cordova-plugin-media-capture" spec="^2.0.0">
-        <variable name="MICROPHONE_USAGE_DESCRIPTION" value="NO USE MICRO IN GESTION SPORTS" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="to insert profile picture" />
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="to insert profile picture" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="to find a profile picture in phone library" />
     </plugin>
 </widget>
