@@ -39,17 +39,17 @@
       "cordova-plugin-network-information": {},
       "cordova-plugin-inappbrowser": {},
       "onesignal-cordova-plugin": {},
-      "cordova-plugin-camera": {
-        "CAMERA_USAGE_DESCRIPTION": "to insert a profile picture",
-        "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert a profile picture"
-      },
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-camera-preview": {},
       "cordova-plugin-media": {},
       "cordova-plugin-file-transfer": {},
       "cordova-plugin-file": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-media-capture": {}
+      "cordova-plugin-media-capture": {},
+      "cordova-plugin-camera": {
+        "CAMERA_USAGE_DESCRIPTION": "to insert a profile picture",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "to insert a profile picture"
+      }
     },
     "platforms": [
       "ios",

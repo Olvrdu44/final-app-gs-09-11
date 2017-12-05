@@ -32,9 +32,6 @@
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "Gestion sports"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "Gestion sports"
-    },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "Gestion sports"
     },
@@ -54,6 +51,9 @@
       "PACKAGE_NAME": "Gestion sports"
     },
     "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "Gestion sports"
+    },
+    "cordova-plugin-camera": {
       "PACKAGE_NAME": "Gestion sports"
     }
   },
