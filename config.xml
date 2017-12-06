@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.rainetcom.gestionsports" version="1.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="fr.rainetcom.gestionsports" version="1.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Gestion sports</name>
     <description>
         Outil pour gérer votre club de sport de A à Z.
@@ -116,6 +116,9 @@
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="L'application aimerait accéder à la galerie pour pourvoir vous permettre de modifier votre photo de profil" />
     </plugin>
 	<config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">  
-		<string>L'application aimerait accéder à la galerie pour pourvoir vous permettre de modifier votre photo de profil</string> 
+		<string>L'application aimerait accéder à la galerie pour vous permettre de modifier votre photo de profil</string> 
+	</config-file>
+	<config-file platform="ios" parent="NSCameraUsageDescription" mode="replace">  
+		<string>L'application aimerait accéder à la caméra pour vous permettre de modifier votre photo de profil</string> 
 	</config-file>
 </widget>
