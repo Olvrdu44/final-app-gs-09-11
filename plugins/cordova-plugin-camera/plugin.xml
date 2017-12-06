@@ -147,9 +147,6 @@
              </feature>
              <preference name="CameraUsesGeolocation" value="false" />
          </config-file>
-		 <config-file platform="ios" parent="NSPhotoLibraryUsageDescription" mode="replace">  
-			  <string>L'application aimerait accéder à la galerie pour pourvoir vous permettre de modifier votre photo de profil</string> 
-		</config-file>
 
          <js-module src="www/ios/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
